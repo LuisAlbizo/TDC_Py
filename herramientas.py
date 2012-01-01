@@ -1,4 +1,4 @@
-from basicos import cortarDesde, pausa, limpiar
+from basicos import cortarDesde, pausa, limpiar, mostrarTexto
 
 def redFloat(f):
 	fl=str(f)
