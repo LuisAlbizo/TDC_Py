@@ -18,10 +18,13 @@ def numCoincidencias(li1,li2):
 		l2.append(el)
 	i=0
 	for el in l1:
-		for ele in range(0,len(l2)):
+		ele=0
+		while ele < len(l2):
 			if el==l2[ele]:
 				i+=1
 				l2[ele]="|>>i<<|"
+				break
+			ele+=1
 	return i
 
 def medirPorcentaje(p,num,t="float"):
@@ -52,7 +55,5 @@ def juntarListas(l1,l2,p=0):
 				lr.append(el)
 	return lr
 
-while True:
-	print redFloat(input("escribe un decimal: "))
-
 #LuisAlbizo 25/06/16
+

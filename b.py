@@ -1,10 +1,11 @@
 from conjunto import conjunto
 from c import *
+from os import system
 
 def rc():
 	print "\n"
 
-class Conjuntos:
+class crearConjuntos:
 	def __init__(self,conjunto):
 		self.a=conjunto
 	
@@ -33,9 +34,37 @@ class Conjuntos:
 		except:
 			print "El conjunto '"+conjunto+"' no existe"
 
-def guardarConjunto():
+class Pertenencia:
+	def subconjunto(self,c1,nombre1,c2,nombre2):
+		if numCoincidencias(c1,c2)==len(c1):
+			print "El conjunto "+nombre1+" es subconjunto del conjunto "+nombre2
+		else:
+			print "El conjunto "+nombre1+" no es subconjunto del conjunto "+nombre2
+
+def guardarConjunto(conjunto):
 	conj=conjunto
 	f=open("conjunto.py","w")
 	f.write("conjunto="+str(conj))
 
+pe=Pertenencia()
+"""
+cc=crearConjuntos(conjunto)
+for i in range(0,4):
+	cc.agregarConjunto()
+	raw_input()
+	system("clear")
+
+guardarConjunto(cc.a)
+"""
+for i in range(0,5):
+	no1=raw_input("Escribe el nombre del 1er conjunto:\n")
+	no2=raw_input("Escribe el nombre del 2do conjunto:\n")
+	co1=conjunto[no1]
+	co2=conjunto[no2]
+	pe.subconjunto(co1,no1,co2,no2)
+	raw_input()
+	system("clear")
+
+
 #LuisAlbizo 24/06/16
+
