@@ -1,3 +1,16 @@
+from basicos import cortarDesde
+
+def redFloat(f):
+	fl=str(f)
+	flo=str(fl[cortarDesde(fl,".")+1:])
+	flot=len(str(flo))
+	cond=5*(10**(flot-1))
+	floa=int(fl[:cortarDesde(fl,".")])
+	if int(flo)>cond:
+		return floa+1
+	else:
+		return floa
+
 def numCoincidencias(li1,li2):
 	l1=li1
 	l2=[]
@@ -11,7 +24,7 @@ def numCoincidencias(li1,li2):
 				l2[ele]="|>>i<<|"
 	return i
 
-def medirPorcentaje(p,num,t="int"):
+def medirPorcentaje(p,num,t="float"):
 	po=float(p)
 	nume=float(num)
 	por=(po/10.0)*(num/10.0)
@@ -38,5 +51,8 @@ def juntarListas(l1,l2,p=0):
 			if i==0:
 				lr.append(el)
 	return lr
+
+while True:
+	print redFloat(input("escribe un decimal: "))
 
 #LuisAlbizo 25/06/16
