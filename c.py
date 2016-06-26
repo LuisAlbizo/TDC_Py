@@ -12,17 +12,16 @@ def redFloat(f):
 		return floa
 
 def numCoincidencias(li1,li2):
-	l1=li1
-	l2=[]
-	for el in li2:
-		l2.append(el)
+	l1=[]
+	l2=li2
+	for el in li1:
+		l1.append(el)
 	i=0
 	for el in l1:
 		ele=0
 		while ele < len(l2):
 			if el==l2[ele]:
 				i+=1
-				l2[ele]="|>>i<<|"
 				break
 			ele+=1
 	return i
