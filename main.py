@@ -25,10 +25,10 @@ class main:
 				self.menuPertenencia()
 			elif opc=="3":
 				print "Adios vaquero :'v\n"
+				pausa("Enter para salir")
 				exit()
 			else:
 				print "Opcion invalida"
-				pausa()
 	
 	def menuCrear(self):
 		cc=crearConjuntos(self.conjunto)
@@ -40,7 +40,6 @@ class main:
 			opc=raw_input("\nEscoge tu opcion: ")
 			limpiar()
 			if opc=="4":
-				pausa("Presione enter para regresar al menu principal")
 				break
 			elif opc=="1":
 				cc.agregarConjunto()
@@ -73,7 +72,7 @@ class main:
 			opc=raw_input("\nEscoge tu opcion: ")
 			limpiar()
 			if opc=="6":
-				pausa("Presione enter para regresar al menu principal")
+				#pausa("Presione enter para regresar al menu principal")
 				break
 			elif opc=="0":
 				print "Proximamente :v...."
