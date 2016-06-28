@@ -4,7 +4,7 @@ from time import sleep
 
 
 class crearConjuntos:
-	def __init__(self,conjunto):
+	def __init__(self,conjunto,arc="fc.py"):
 		self.conjunto=conjunto
 	
 	def agregarConjunto(self):
@@ -24,7 +24,6 @@ class crearConjuntos:
 				print "Entrada incorrecta"
 		self.conjunto[nombre]=elementos
 
-
 	def mostrarConjunto(self):
 		conjunto=raw_input("Escribe el nombre del conjunto a ocserbar:\n")
 		try:
@@ -32,8 +31,8 @@ class crearConjuntos:
 		except:
 			print "El conjunto '"+conjunto+"' no existe"
 	
-	def guardarConjunto(self):
-		cf=open("conjunto.py","w")
+	def guardarCambios(self):
+		cf=open(arc,"w")
 		cf.write("conjunto="+str(self.conjunto))
 		cf.close()
 

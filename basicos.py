@@ -1,8 +1,8 @@
 from os import system
 def limpiar():
 	system("clear")
-def pausa():
-	raw_input("Presione enter")
+def pausa(m="Presione enter"):
+	raw_input(m)
 	limpiar()
 abc="abcdefghijklmnopqrstuvwxyz"
 ABC=abc.upper()
