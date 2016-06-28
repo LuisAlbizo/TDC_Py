@@ -1,6 +1,5 @@
 from fc import conjunto
 from herramientas import *
-from os import system
 from time import sleep
 
 
@@ -44,7 +43,7 @@ class Pertenencia:
 			if m=="ret":
 				return True
 			elif m=="imp":
-				print "El conjunto",nombre1+"es subconjunto del conjunto",nombre2
+				print "El conjunto",nombre1,"es subconjunto del conjunto",nombre2
 		else:
 			if m=="ret":
 				return False
@@ -131,6 +130,5 @@ pero si de aqui a una semana no lo resuelvo de una manera correcta
 usando la recursividad bien, buscare algun tutorial en algun foro o algo asi :v
 26/06/16---
 """
-
 
 #LuisAlbizo 24/06/16
