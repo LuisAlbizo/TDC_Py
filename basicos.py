@@ -1,9 +1,23 @@
 from os import system
+
+def mostrarTexto(arc,filai,filaf):
+	f=open(arc,"r")
+	lins=f.readlines()
+	f.close()
+	lines=[]
+	for el in lins:
+		lines.append(el[:-1])
+	for i in range(filai-1, filaf):
+		print lines[i]
+
 def limpiar():
-	system("clear")
+	if system("cls")!=0:
+		system("clear")
+
 def pausa(m="Presione enter"):
 	raw_input(m)
 	limpiar()
+
 abc="abcdefghijklmnopqrstuvwxyz"
 ABC=abc.upper()
 abc=abc+ABC

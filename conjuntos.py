@@ -6,7 +6,8 @@ from time import sleep
 class crearConjuntos:
 	def __init__(self,conjunto,arc="fc.py"):
 		self.conjunto=conjunto
-	
+		self.arc=arc
+
 	def agregarConjunto(self):
 		nombre=raw_input("Escribe el nombre del conjunto a crear:\n")
 		elementos=[]
@@ -32,7 +33,7 @@ class crearConjuntos:
 			print "El conjunto '"+conjunto+"' no existe"
 	
 	def guardarCambios(self):
-		cf=open(arc,"w")
+		cf=open(self.arc,"w")
 		cf.write("conjunto="+str(self.conjunto))
 		cf.close()
 
@@ -76,7 +77,9 @@ class Pertenencia:
 				print "El conjunto",nombre1,"no es igual al conjunto",nombre2
 
 	def disjunto(self,c1,c2,nombre1="A",nombre2="B",m="ret"):
-		if numCoincidencias(c1,c2)==0:
+		a=not(self.subConjunto(c1,c2))
+		b=not(self.subConjunto(c2,c1))
+		if a and b:
 			if m=="ret":
 				return True
 			elif m=="imp":

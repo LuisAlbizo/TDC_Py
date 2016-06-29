@@ -1,9 +1,12 @@
 from conjuntos import *
 
+text="texto.txt"
+
 class main:
 
 	def __init__(self,conjunto):
 		self.conjunto=conjunto
+		limpiar()
 		print "Teoria de conjuntos"
 		while True:
 			print "Menu principal\n"
@@ -15,7 +18,7 @@ class main:
 			opc=raw_input("\nEscoge tu opcion: ")
 			limpiar()
 			if opc=="0":
-				print "Aun no disponible"
+				mostrarTexto(text,2,18)
 				pausa()
 			elif opc=="m" or opc=="M":
 				self.ayuda()
@@ -72,11 +75,29 @@ class main:
 			opc=raw_input("\nEscoge tu opcion: ")
 			limpiar()
 			if opc=="6":
-				#pausa("Presione enter para regresar al menu principal")
 				break
 			elif opc=="0":
-				print "Proximamente :v...."
-				pausa()
+				while True:
+					mostrarTexto(text,20,31)
+					sub=raw_input("\nEscoge un subtema o s/S para regresar: ")
+					limpiar()
+					if sub=="1":
+						mostrarTexto(text,32,39)
+						pausa()
+					elif sub=="2":
+						mostrarTexto(text,40,47)
+						pausa()
+					elif sub=="3":
+						mostrarTexto(text,48,52)
+						pausa()
+					elif sub=="4":
+						mostrarTexto(text,53,59)
+						pausa()
+					elif sub=="s" or sub=="S":
+						limpiar()
+						break
+					else:
+						print "Opcion invalida"
 			elif opc=="1":
 				nom1=raw_input("Primer conjunto: ")
 				nom2=raw_input("Segundo conjunto: ")
