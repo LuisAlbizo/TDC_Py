@@ -59,7 +59,6 @@ class main:
 				pausa()
 			else:
 				print "Opcion invalida"
-				pausa()
 
 	def menuPertenencia(self):
 		pe=Pertenencia()
@@ -99,93 +98,107 @@ class main:
 					else:
 						print "Opcion invalida"
 			elif opc=="1":
-				nom1=raw_input("Primer conjunto: ")
-				nom2=raw_input("Segundo conjunto: ")
 				nohuboerror=True
 				try:
+					nom1=raw_input("Primer conjunto: ")
 					con1=self.conjunto[nom1]
+					print nom1,str(con1)
 				except:
-					print "El conjunto",nom2,"no existe"
+					print "El conjunto",nom1,"no existe"
 					nohuboerror=False
-				try:
-					con2=self.conjunto[nom2]
-				except:
-					print "El conjunto",nom2,"no existe"
-					nohuboerror=False
+				if nohuboerror:
+					try:
+						nom2=raw_input("Segundo conjunto: ")
+						con2=self.conjunto[nom2]
+						print nom2,str(con2)
+					except:
+						print "El conjunto",nom2,"no existe"
+						nohuboerror=False
 				if nohuboerror:
 					pe.subConjunto(con1,con2,nom1,nom2,"imp")
 				pausa()
 			elif opc=="2":
-				nom1=raw_input("Primer conjunto: ")
-				nom2=raw_input("Segundo conjunto: ")
 				nohuboerror=True
 				try:
+					nom1=raw_input("Primer conjunto: ")
 					con1=self.conjunto[nom1]
+					print nom1,str(con1)
 				except:
 					print "El conjunto",nom1,"no existe"
 					nohuboerror=False
-				try:
-					con2=self.conjunto[nom2]
-				except:
-					print "El conjunto",nom2,"no existe"
-					nohuboerror=False
+				if nohuboerror:
+					try:
+						nom2=raw_input("Segundo conjunto: ")
+						con2=self.conjunto[nom2]
+						print nom2,str(con2)
+					except:
+						print "El conjunto",nom2,"no existe"
+						nohuboerror=False
 				if nohuboerror:
 					pe.superConjunto(con1,con2,nom1,nom2,"imp")
 				pausa()
 			elif opc=="3":
-				nom1=raw_input("Primer conjunto: ")
-				nom2=raw_input("Segundo conjunto: ")
 				nohuboerror=True
 				try:
+					nom1=raw_input("Primer conjunto: ")
 					con1=self.conjunto[nom1]
+					print nom1,str(con1)
 				except:
 					print "El conjunto",nom1,"no existe"
 					nohuboerror=False
-				try:
-					con2=self.conjunto[nom2]
-				except:
-					print "El conjunto",nom2,"no existe"
-					nohuboerror=False
+				if nohuboerror:
+					try:
+						nom2=raw_input("Segundo conjunto: ")
+						con2=self.conjunto[nom2]
+						print nom2,str(con2)
+					except:
+						print "El conjunto",nom2,"no existe"
+						nohuboerror=False
 				if nohuboerror:
 					pe.iguales(con1,con2,nom1,nom2,"imp")
 				pausa()
 			elif opc=="4":
-				nom1=raw_input("Primer conjunto: ")
-				nom2=raw_input("Segundo conjunto: ")
 				nohuboerror=True
 				try:
+					nom1=raw_input("Primer conjunto: ")
 					con1=self.conjunto[nom1]
+					print nom1,str(con1)
 				except:
 					print "El conjunto",nom1,"no existe"
 					nohuboerror=False
-				try:
-					con2=self.conjunto[nom2]
-				except:
-					print "El conjunto",nom2,"no existe"
-					nohuboerror=False
+				if nohuboerror:
+					try:
+						nom2=raw_input("Segundo conjunto: ")
+						con2=self.conjunto[nom2]
+						print nom2,str(con2)
+					except:
+						print "El conjunto",nom2,"no existe"
+						nohuboerror=False
 				if nohuboerror:
 					pe.subConjuntoPropio(con1,con2,nom1,nom2,"imp")
 				pausa()
 			elif opc=="5":
-				nom1=raw_input("Primer conjunto: ")
-				nom2=raw_input("Segundo conjunto: ")
 				nohuboerror=True
 				try:
+					nom1=raw_input("Primer conjunto: ")
 					con1=self.conjunto[nom1]
+					print nom1,str(con1)
 				except:
 					print "El conjunto",nom1,"no existe"
 					nohuboerror=False
-				try:
-					con2=self.conjunto[nom2]
-				except:
-					print "El conjunto",nom2,"no existe"
-					nohuboerror=False
+				if nohuboerror:
+					try:
+						nom2=raw_input("Segundo conjunto: ")
+						con2=self.conjunto[nom2]
+						print nom2,str(con2)
+					except:
+						print "El conjunto",nom2,"no existe"
+						nohuboerror=False
 				if nohuboerror:
 					pe.disjunto(con1,con2,nom1,nom2,"imp")
 				pausa()
 			else:
 				print "Opcion invalida"
-				pausa()
 	
 	def ayuda(self):
 		print "La teoria de conjuntos es bla bla bla, sirve para bla bla bla, este programa sirve para bla bla bla"

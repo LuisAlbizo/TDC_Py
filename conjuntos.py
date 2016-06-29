@@ -79,7 +79,12 @@ class Pertenencia:
 	def disjunto(self,c1,c2,nombre1="A",nombre2="B",m="ret"):
 		a=not(self.subConjunto(c1,c2))
 		b=not(self.subConjunto(c2,c1))
-		if a and b:
+		c=numCoincidencias(c1,c2)==0
+		if len(c1)==0 or len(c2)==0:
+			d= a and b
+		else:
+			d=c
+		if d:
 			if m=="ret":
 				return True
 			elif m=="imp":
