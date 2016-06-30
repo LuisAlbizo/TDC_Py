@@ -1,4 +1,5 @@
 from conjuntos import *
+from basicos import limpiar, pausa, mostrarTexto
 
 text="texto.txt"
 
@@ -70,10 +71,11 @@ class main:
 			print "Opcion 3: Igualdad"
 			print "Opcion 4: Subconjunto propio"
 			print "Opcion 5: Disjunto o conjunto ajeno"
-			print "Oocion 6: Volver al menu principal"
+			print "Opcion 6: Propiedades completas de 2 conjuntos"
+			print "Opcion 7: Volver al menu principal"
 			opc=raw_input("\nEscoge tu opcion: ")
 			limpiar()
-			if opc=="6":
+			if opc=="7":
 				break
 			elif opc=="0":
 				while True:
@@ -92,8 +94,7 @@ class main:
 					elif sub=="4":
 						mostrarTexto(text,53,59)
 						pausa()
-					elif sub=="s" or sub=="S":
-						limpiar()
+					elif sub=="s" or sub=="S":	
 						break
 					else:
 						print "Opcion invalida"
@@ -195,6 +196,33 @@ class main:
 						print "El conjunto",nom2,"no existe"
 						nohuboerror=False
 				if nohuboerror:
+					pe.disjunto(con1,con2,nom1,nom2,"imp")
+				pausa()
+			elif opc=="6":
+				nohuboerror=True
+				try:
+					nom1=raw_input("Primer conjunto: ")
+					con1=self.conjunto[nom1]
+					print nom1,str(con1)
+				except:
+					print "El conjunto",nom1,"no existe"
+					nohuboerror=False
+				if nohuboerror:
+					try:
+						nom2=raw_input("Segundo conjunto: ")
+						con2=self.conjunto[nom2]
+						print nom2,str(con2)
+					except:
+						print "El conjunto",nom2,"no existe"
+						nohuboerror=False
+				if nohuboerror:
+					pe.subConjunto(con1,con2,nom1,nom2,"imp")
+					pe.subConjunto(con2,con1,nom2,nom1,"imp")
+					pe.superConjunto(con1,con2,nom1,nom2,"imp")
+					pe.superConjunto(con2,con1,nom2,nom1,"imp")
+					pe.iguales(con1,con2,nom1,nom2,"imp")
+					pe.subConjuntoPropio(con1,con2,nom1,nom2,"imp")
+					pe.subConjuntoPropio(con2,con1,nom2,nom1,"imp")
 					pe.disjunto(con1,con2,nom1,nom2,"imp")
 				pausa()
 			else:

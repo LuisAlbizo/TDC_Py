@@ -1,4 +1,4 @@
-from basicos import cortarDesde, pausa, limpiar, mostrarTexto
+from basicos import cortarDesde
 
 def redFloat(f):
 	fl=str(f)
@@ -35,23 +35,22 @@ def medirPorcentaje(p,num,t="float"):
 	elif t=="int":
 		return int(por)
 
-def juntarListas(l1,l2,p=0):
+def juntarListas(l1,l2):
 	lr=[]
-	if p==0:
-		for el in l1:
-			i=0
-			for ele in lr:
-				if ele==el:
-					i+=1
-			if i==0:
-				lr.append(el)
-		for el in l2:
-			i=0
-			for ele in lr:
-				if el==ele:
-					i+=1
-			if i==0:
-				lr.append(el)
+	for el in l1:
+		i=0
+		for ele in lr:
+			if ele==el:
+				i+=1
+		if i==0:
+			lr.append(el)
+	for el in l2:
+		i=0
+		for ele in lr:
+			if el==ele:
+				i+=1
+		if i==0:
+			lr.append(el)
 	return lr
 
 def duplicarLista(lista):
@@ -71,18 +70,14 @@ def estaEn(que,donde):
 		return False
 
 def eliminarDuplicados(lista):
-	a=duplicarLista(lista)
-	for el in range(0,len(lista)):
-		b=duplicarLista(lista)
-		b[el]="|>>i<<|"
-		if estaEn(lista[el],b):
-			a[el]=None
-	c=[]
-	for el in a:
-		if el != None:
-			c.append(el)
-	return c
-#La funcion eliminarDuplicados no funciona pero como solo la hice para solucionar otro error ya no la necesito :v (por ahora)
-#print eliminarDuplicados([12,2,2,2,3,3])
+	lr=[]
+	for el in lista:
+		i=0
+		for ele in lr:
+			if ele==el:
+				i+=1
+		if i==0:
+			lr.append(el)
+	return lr
 
 #LuisAlbizo 25/06/16

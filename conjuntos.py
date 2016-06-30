@@ -1,5 +1,5 @@
 from fc import conjunto
-from herramientas import *
+from herramientas import numCoincidencias, duplicarLista
 from time import sleep
 
 
