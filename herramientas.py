@@ -35,24 +35,6 @@ def medirPorcentaje(p,num,t="float"):
 	elif t=="int":
 		return int(por)
 
-def juntarListas(l1,l2):
-	lr=[]
-	for el in l1:
-		i=0
-		for ele in lr:
-			if ele==el:
-				i+=1
-		if i==0:
-			lr.append(el)
-	for el in l2:
-		i=0
-		for ele in lr:
-			if el==ele:
-				i+=1
-		if i==0:
-			lr.append(el)
-	return lr
-
 def duplicarLista(lista):
 	listaDuplicada=[]
 	for el in lista:
@@ -60,11 +42,11 @@ def duplicarLista(lista):
 	return listaDuplicada
 
 def estaEn(que,donde):
-	i=0
+	i=False
 	for el in donde:
 		if el==que:
-			i+=1
-	if i>0:
+			i=True
+	if i:
 		return True
 	else:
 		return False
@@ -79,5 +61,10 @@ def eliminarDuplicados(lista):
 		if i==0:
 			lr.append(el)
 	return lr
+	
+def juntarListas(l1,l2):
+	a=eliminarDuplicados(l1)
+	b=eliminarDuplicados(l2)
+	return eliminarDuplicados(a+b)
 
 #LuisAlbizo 25/06/16

@@ -1,10 +1,14 @@
-from conjuntos import *
-from basicos import limpiar, pausa, mostrarTexto
+try:
+	error=True
+	from conjuntos import *
+	from basicos import limpiar, pausa, mostrarTexto
+except ImportError:
+	error=False
+	print "Error\nFaltan archivos para la ejecucion de este programa"
 
 text="texto.txt"
 
 class main:
-
 	def __init__(self,conjunto):
 		self.conjunto=conjunto
 		limpiar()
@@ -14,7 +18,7 @@ class main:
 			print "Opcion 0: Teoria"
 			print "Opcion 1: Crear conjuntos"
 			print "Opcion 2: Pertenencia"
-			print "Opcion 3: Salir"
+			print "Salir[s/S]"
 			print "Mas[m/M]"
 			opc=raw_input("\nEscoge tu opcion: ")
 			limpiar()
@@ -27,8 +31,8 @@ class main:
 				self.menuCrear()
 			elif opc=="2":
 				self.menuPertenencia()
-			elif opc=="3":
-				print "Adios vaquero :'v\n"
+			elif opc=="s" or opc == "S":
+				print "Adios\n"
 				pausa("Enter para salir")
 				exit()
 			else:
@@ -40,10 +44,10 @@ class main:
 			print "Opcion 1: Agregar conjunto"
 			print "Opcion 2: Ocserbar conjunto"
 			print "Opcion 3: Guardar cambios"
-			print "Opcion 4: Volver al menu principal"
+			print "Volver al menu principal[s/S]"
 			opc=raw_input("\nEscoge tu opcion: ")
 			limpiar()
-			if opc=="4":
+			if opc=="s" or opc == "S":
 				break
 			elif opc=="1":
 				cc.agregarConjunto()
@@ -72,15 +76,15 @@ class main:
 			print "Opcion 4: Subconjunto propio"
 			print "Opcion 5: Disjunto o conjunto ajeno"
 			print "Opcion 6: Propiedades completas de 2 conjuntos"
-			print "Opcion 7: Volver al menu principal"
+			print "Volver al menu principal[s/S]"
 			opc=raw_input("\nEscoge tu opcion: ")
 			limpiar()
-			if opc=="7":
+			if opc=="s" or opc == "S":
 				break
 			elif opc=="0":
 				while True:
 					mostrarTexto(text,20,31)
-					sub=raw_input("\nEscoge un subtema o s/S para regresar: ")
+					sub=raw_input("Regresar[s/S]\n\nEscoge un subtema: ")
 					limpiar()
 					if sub=="1":
 						mostrarTexto(text,32,39)
@@ -229,11 +233,12 @@ class main:
 				print "Opcion invalida"
 	
 	def ayuda(self):
-		print "La teoria de conjuntos es bla bla bla, sirve para bla bla bla, este programa sirve para bla bla bla"
-		print "Este programa solo es una practica de la teoria de conjuntos, hecho por un wanabbe normie grasoso de 16 :v"
-		print "\nPrograma creado totalmemte por Luis Albizo 24-27/06/2016\nPresentar este codigo como prpyecto para tu escuela es un delito muy serio, no lo hagas inutil potque te hackeo el facebook y te rebiemto ok?"
+		print "Este programa sirve para crear simulaciones de conjuntos\nmas bien son listas de numeros o cadenas (se puede crear un conjunto con ambos tipos de datos)"
+		print "Y se puede verificar pertenencia entre 2 conjuntos que el usuario defina (aunque probablemente yo sea el unico usuario :'v)"
+		print "Este programa solo es una practica de la teoria de conjuntos, hecho por Luis Albizo el 24/06-01/07/2016"
 		pausa()
 
-menu=main(conjunto)
+if error:
+	menu=main(conjunto)
 
 #Luis Albizo 27/06/16
