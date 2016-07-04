@@ -18,6 +18,7 @@ class main:
 			print "Opcion 0: Teoria"
 			print "Opcion 1: Crear conjuntos"
 			print "Opcion 2: Pertenencia"
+			print "Opcion 3: Operaciones con conjuntos"
 			print "Salir[s/S]"
 			print "Mas[m/M]"
 			opc=raw_input("\nEscoge tu opcion: ")
@@ -31,11 +32,37 @@ class main:
 				self.menuCrear()
 			elif opc=="2":
 				self.menuPertenencia()
+			elif opc=="3":
+				self.menuOperaciones()
 			elif opc=="s" or opc == "S":
 				pausa("Adios\n\nEnter para salir")
 				exit()
 			else:
 				print "Opcion invalida"
+	
+	def pedir2conjuntos(self):
+		nohuboerror=True
+		try:
+			nom1=raw_input("Primer conjunto: ")
+			con1=self.conjunto[nom1]
+			print nom1,str(con1)
+		except:
+			con1="None"
+			print "El conjunto",nom1,"no existe"
+			nohuboerror=False
+		if nohuboerror:
+			try:
+				nom2=raw_input("Segundo conjunto: ")
+				con2=self.conjunto[nom2]
+				print nom2,str(con2)
+			except:
+				con2="None"
+				print "El conjunto",nom2,"no existe"
+				nohuboerror=False
+		else:
+			con2="None"
+			nom2="None"
+		return {"error":nohuboerror,"con1":con1,"con2":con2,"nom1":nom1,"nom2":nom2}
 	
 	def menuCrear(self):
 		cc=crearConjuntos(self.conjunto)
@@ -102,122 +129,62 @@ class main:
 					else:
 						print "Opcion invalida"
 			elif opc=="1":
-				nohuboerror=True
-				try:
-					nom1=raw_input("Primer conjunto: ")
-					con1=self.conjunto[nom1]
-					print nom1,str(con1)
-				except:
-					print "El conjunto",nom1,"no existe"
-					nohuboerror=False
-				if nohuboerror:
-					try:
-						nom2=raw_input("Segundo conjunto: ")
-						con2=self.conjunto[nom2]
-						print nom2,str(con2)
-					except:
-						print "El conjunto",nom2,"no existe"
-						nohuboerror=False
+				c=self.pedir2conjuntos()
+				nohuboerror=c["error"]
+				con1=c["con1"]
+				con2=c["con2"]
+				nom1=c["nom1"]
+				nom2=c["nom2"]
 				if nohuboerror:
 					pe.subConjunto(con1,con2,nom1,nom2,"imp")
 				pausa()
 			elif opc=="2":
-				nohuboerror=True
-				try:
-					nom1=raw_input("Primer conjunto: ")
-					con1=self.conjunto[nom1]
-					print nom1,str(con1)
-				except:
-					print "El conjunto",nom1,"no existe"
-					nohuboerror=False
-				if nohuboerror:
-					try:
-						nom2=raw_input("Segundo conjunto: ")
-						con2=self.conjunto[nom2]
-						print nom2,str(con2)
-					except:
-						print "El conjunto",nom2,"no existe"
-						nohuboerror=False
+				c=self.pedir2conjuntos()
+				nohuboerror=c["error"]
+				con1=c["con1"]
+				con2=c["con2"]
+				nom1=c["nom1"]
+				nom2=c["nom2"]
 				if nohuboerror:
 					pe.superConjunto(con1,con2,nom1,nom2,"imp")
 				pausa()
 			elif opc=="3":
-				nohuboerror=True
-				try:
-					nom1=raw_input("Primer conjunto: ")
-					con1=self.conjunto[nom1]
-					print nom1,str(con1)
-				except:
-					print "El conjunto",nom1,"no existe"
-					nohuboerror=False
-				if nohuboerror:
-					try:
-						nom2=raw_input("Segundo conjunto: ")
-						con2=self.conjunto[nom2]
-						print nom2,str(con2)
-					except:
-						print "El conjunto",nom2,"no existe"
-						nohuboerror=False
+				c=self.pedir2conjuntos()
+				nohuboerror=c["error"]
+				con1=c["con1"]
+				con2=c["con2"]
+				nom1=c["nom1"]
+				nom2=c["nom2"]
 				if nohuboerror:
 					pe.iguales(con1,con2,nom1,nom2,"imp")
 				pausa()
 			elif opc=="4":
-				nohuboerror=True
-				try:
-					nom1=raw_input("Primer conjunto: ")
-					con1=self.conjunto[nom1]
-					print nom1,str(con1)
-				except:
-					print "El conjunto",nom1,"no existe"
-					nohuboerror=False
-				if nohuboerror:
-					try:
-						nom2=raw_input("Segundo conjunto: ")
-						con2=self.conjunto[nom2]
-						print nom2,str(con2)
-					except:
-						print "El conjunto",nom2,"no existe"
-						nohuboerror=False
+				c=self.pedir2conjuntos()
+				nohuboerror=c["error"]
+				con1=c["con1"]
+				con2=c["con2"]
+				nom1=c["nom1"]
+				nom2=c["nom2"]
 				if nohuboerror:
 					pe.subConjuntoPropio(con1,con2,nom1,nom2,"imp")
 				pausa()
 			elif opc=="5":
-				nohuboerror=True
-				try:
-					nom1=raw_input("Primer conjunto: ")
-					con1=self.conjunto[nom1]
-					print nom1,str(con1)
-				except:
-					print "El conjunto",nom1,"no existe"
-					nohuboerror=False
-				if nohuboerror:
-					try:
-						nom2=raw_input("Segundo conjunto: ")
-						con2=self.conjunto[nom2]
-						print nom2,str(con2)
-					except:
-						print "El conjunto",nom2,"no existe"
-						nohuboerror=False
+				c=self.pedir2conjuntos()
+				nohuboerror=c["error"]
+				con1=c["con1"]
+				con2=c["con2"]
+				nom1=c["nom1"]
+				nom2=c["nom2"] 			
 				if nohuboerror:
 					pe.disjunto(con1,con2,nom1,nom2,"imp")
 				pausa()
 			elif opc=="6":
-				nohuboerror=True
-				try:
-					nom1=raw_input("Primer conjunto: ")
-					con1=self.conjunto[nom1]
-					print nom1,str(con1)
-				except:
-					print "El conjunto",nom1,"no existe"
-					nohuboerror=False
-				if nohuboerror:
-					try:
-						nom2=raw_input("Segundo conjunto: ")
-						con2=self.conjunto[nom2]
-						print nom2,str(con2)
-					except:
-						print "El conjunto",nom2,"no existe"
-						nohuboerror=False
+				c=self.pedir2conjuntos()
+				nohuboerror=c["error"]
+				con1=c["con1"]
+				con2=c["con2"]
+				nom1=c["nom1"]
+				nom2=c["nom2"]
 				if nohuboerror:
 					pe.subConjunto(con1,con2,nom1,nom2,"imp")
 					pe.subConjunto(con2,con1,nom2,nom1,"imp")
@@ -227,6 +194,91 @@ class main:
 					pe.subConjuntoPropio(con1,con2,nom1,nom2,"imp")
 					pe.subConjuntoPropio(con2,con1,nom2,nom1,"imp")
 					pe.disjunto(con1,con2,nom1,nom2,"imp")
+				pausa()
+			else:
+				print "Opcion invalida"
+	
+	def menuOperaciones(self):
+		op=Operaciones()
+		while True:
+			print "Menu para realizar operaciones entre conjuntos\n"
+			print "Opcion 0: Teoria"
+			print "Opcion 1: Union"
+			print "Opcion 2: Interseccion"
+			print "Opcion 3: Diferencia"
+			print "Opcion 4: Diferencia simetrica"
+			print "Volver al menu principal[s/S]\n"
+			opc=raw_input("Escoge tu opcion: ")
+			limpiar()
+			if opc=="s" or opc=="S":
+				break
+			elif opc=="0":
+				while True:
+					mostrarTexto(text,61,68)
+					sub=raw_input("Regresar[s/S]\n\nEscoge un subtema: ")
+					limpiar()
+					if sub=="1" or sub == "u":
+						mostrarTexto(text,69,75)
+						pausa()
+					elif sub=="2" or sub== "n":
+						mostrarTexto(text,76,82)
+						pausa()
+					elif sub=="3" or sub == "\\":
+						mostrarTexto(text,83,92)
+						pausa()
+					elif sub=="4" or sub == "/\\":
+						mostrarTexto(text,93,102)
+						pausa()
+					elif sub == "o" or sub == "O":
+						mostrarTexto(text,103,113)
+						pausa()
+					elif sub=="s" or sub=="S":	
+						break
+					else:
+						print "Opcion invalida"
+			elif opc=="1":
+				print "Union"
+				c=self.pedir2conjuntos()
+				nohuboerror=c["error"]
+				con1=c["con1"]
+				con2=c["con2"]
+				nom1=c["nom1"]
+				nom2=c["nom2"]
+				if nohuboerror:
+					op.union(con1,con2,nom1,nom2,"imp")
+				pausa()
+			elif opc=="2":
+				print "Interseccion"
+				c=self.pedir2conjuntos()
+				nohuboerror=c["error"]
+				con1=c["con1"]
+				con2=c["con2"]
+				nom1=c["nom1"]
+				nom2=c["nom2"]
+				if nohuboerror:
+					op.interseccion(con1,con2,nom1,nom2,"imp")
+				pausa()
+			elif opc=="3":
+				print "Diferencia"
+				c=self.pedir2conjuntos()
+				nohuboerror=c["error"]
+				con1=c["con1"]
+				con2=c["con2"]
+				nom1=c["nom1"]
+				nom2=c["nom2"]
+				if nohuboerror:
+					op.diferencia(con1,con2,nom1,nom2,"imp")
+				pausa()
+			elif opc=="4":
+				print "Diferencia simetrica"
+				c=self.pedir2conjuntos()
+				nohuboerror=c["error"]
+				con1=c["con1"]
+				con2=c["con2"]
+				nom1=c["nom1"]
+				nom2=c["nom2"]
+				if nohuboerror:
+					op.diferenciaSimetrica(con1,con2,nom1,nom2,"imp")
 				pausa()
 			else:
 				print "Opcion invalida"

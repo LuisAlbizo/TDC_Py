@@ -14,8 +14,8 @@ d) Los mamiferos
 e) Los insectos
 f) Las plantas
 En los ejemplos anteriores a excepcion del ejemplo c, vemos que aunque no esten bien definidos los elementos del conjunto (escritos) estan delimitados por medio de una expresion; como en el ejemplo a, en el que se sabe que elemento puede o no pertenecer al conjunto, pues se sabe que el elemento 5 no pertenece al conjunto a, el elemento 20 si pertenece.
--Pertenencia: la pertenencia sirve para expresar la relacion entre dos o mas conjuntos, como por ejemplo si todos los elementos de un conjunto A tambien son elementos de un conjunto B; se dice que A es un subconjunto de B. 
-Para mas informacion vaya al submenu "Pertenencia".
+-Algebra de conjuntos: En matematicas, algebra de conjuntos es el estudio de las operaciones basicas que pueden realizarse con conjuntos, como la union , interseccion. Y la pertenencia entre conjuntos como los subconjuntos o la igualdad entre conjuntos.
+Para mas informacion vaya al submenu "Pertenencia" y "Operaciones con conjuntos".
 
 Tema 2: Pertenencia
 Se dice que un elemento pertenece a un conjunto cuando dentro del conjunto hay un elemento, objeto igual.
@@ -58,4 +58,57 @@ B={4,5,6}
 C={6,7,8}
 A es ajeno a B y A es ajeno a C, pero B no es ajeno a C porque tienen en comun el elemento 6
 
+Tema 3: Operaciones con conjuntos
+En teoria de conjuntos las operaciones entre conjuntos son:
+
+Subtema 1: Union (u)
+Subtema 2: Interseccion (n)
+Subtema 3: Diferencia (\)
+Subtema 4: Diferencia simetrica (/\)
+Otros teoremas[o/O]
+_Union.-
+La operacion de union entre 2 conjuntos A y B es un conjunto resultante el cual contiene todod los elementos que pertenecen a A y todos los elementos que pertenecen a B
+El simbolo que mas se utiliza para denotar la union de dos conjuntos es 'U' (pero en este programa se utiluzara 'u')
+Ejemplo.-
+A={Rojo, Azul, Verde}
+B={Amarillo, Naranja, Verde}
+A u B = {Rojo, Azul, Verde, Amarillo, Naranja}
+_Interseccion.-
+La operacion de interseccion entre 2 conjuntos A y B es un conjunto resultante el cual contiene los elementos que tienen en comun ambos conjuntos, es decir: todos los elementos que pertenecen a A y pertenecen a B al mismo tiempo.
+El simbolo que mas se utiliza para denotar la interseccion de dos conjuntos es una 'U' invertida (pero en este programa se utilizara 'n')
+Ejemplo.-
+A={Rojo, Azul, Verde}
+B={Amarillo, Naranja, Verde}
+A n B = {Verde}
+_Diferencia.-
+La operacion de diferencia entre 2 conjuntos A y B es un conjunto resultante el cual contiene todos los elementos que pertenecen al conjunto A pero que no pertenecen al conjunto B, es decir: la operacion de diferencia entre 2 conjuntos es igual a todos los elementos que pertenecen al primer conjunto excepto aquellos que pertenecen al segundo
+El simbolo que mas se utiliza para denotar la diferencia de dos conjuntos es '-' o '\' (en este programa se manejara '\')
+Ejemplo.-
+A={Rojo, Azul, Verde}
+B={Amarillo, Naranja, Verde}
+A \ B = {Rojo, Azul}
+B \ A = {Amarillo, Naranja}
+Entonce podemos decir que las sig. igualdades/equivalencias son correctas:
+A \ B = A \ (A n B)
+_Diferecia simetrica.-
+La operacion de diferencia simetrica entre 2 conjuntos A y B es un conjunto resultante que contiene todos los elementos que pertenecen a A o pertenecen a B pero no a ambos, en otras palabras es la diferencia simetrica entre dos conjuntos son todos los elementos que pertenecen a ambos a excepcion de aquellos elementos que pertenecen a los dos al mismo tiempo
+El simbolo que mas se utiliza para denotar la diferencia simetrica de dos conjuntos es un triangulo [A triangulo B] (pero en este programa se utilizara '/\')
+Ejemplo.-
+A={Rojo, Azul, Verde}
+B={Amarillo, Naranja, Verde}
+A /\ B = {Rojo, Azul, Amarillo, Naranja}
+Entonce podemos decir que las sig. igualdades/equivalencias son correctas:
+A /\ B = (A \ B) u (B \ A)
+A /\ B = (A u B) \ (A n B)
+_Teoremas.-
+Si tenemos 2 conjuntos A y B:
+Si B={}
+Entonces A u B = A
+Entonces A \ B = A
+
+Si A = B
+Entonces A u B = A = B
+Entonces A n B = A = B
+Entonces A \ B o B \ A= {}
+Entonces A /\ B = {}
 

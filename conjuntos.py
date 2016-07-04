@@ -124,24 +124,13 @@ class Operaciones:
 		if m=="ret":
 			return quitar(c1,c2)
 		elif m=="imp":
-			print n1,"-",n2,"=",str(quitar(c1,c2))
+			print n1,"\\",n2,"=",str(quitar(c1,c2))
 
 	def diferenciaSimetrica(self,c1,c2,n1="A",n2="B",m="ret"):
 		ds=self.diferencia(c1,c2)+self.diferencia(c2,c1)
 		if m=="ret":
 			return ds
 		elif m=="imp":
-			print "("+n1,"-",n2+")","u","("+n2,"-",n1+")","=",str(ds)
-
-op=Operaciones()
-d=[23,24,25,25,22,23]
-e=[23,24,24,26,28]
-print "D =",str(d)
-print "E =",str(e),"\n"
-op.union(d,e,"D","E","imp")
-op.interseccion(d,e,"D","E","imp")
-op.diferencia(d,e,"D","E","imp")
-op.diferencia(e,d,"E","D","imp")
-op.diferenciaSimetrica(d,e,"D","E","imp")
+			print n1,"/\\",n2,"=",str(ds)
 
 #LuisAlbizo 24/06/16
