@@ -32,8 +32,7 @@ class main:
 			elif opc=="2":
 				self.menuPertenencia()
 			elif opc=="s" or opc == "S":
-				print "Adios\n"
-				pausa("Enter para salir")
+				pausa("Adios\n\nEnter para salir")
 				exit()
 			else:
 				print "Opcion invalida"

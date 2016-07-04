@@ -1,5 +1,5 @@
 from fc import conjunto
-from herramientas import numCoincidencias, duplicarLista
+from herramientas import quitar,numCoincidencias,estaEn,elementosComunes, duplicarLista, eliminarDuplicados, juntarListas
 from time import sleep
 
 
@@ -11,7 +11,7 @@ class crearConjuntos:
 	def agregarConjunto(self):
 		nombre=raw_input("Escribe el nombre del conjunto a crear:\n")
 		elementos=[]
-		print "Escribe los elementos:\n['end' para terminar]"
+		print "Escribe los elementos:\n['end' para ternminar]"
 		while True:
 			try:
 				b=raw_input()
@@ -107,35 +107,41 @@ class Pertenencia:
 			elif m=="imp":
 				print "El conjunto",nombre1,"no es subconjunto propio de",nombre2
 
-"""
-def conPo1(con):
-	a=[duplicarLista(con)]
-	if len(con)==1:
-		return []
-	else:
-		for el in range(0,len(con)):
-			c=[]
-			for ele in range(0,len(con)):
-				if ele!=el:
-					c.append(con[ele])
-					if len(c)==len(con)-1:
-						a.append(c)
-	return a
+class Operaciones:
+	def union(self,c1,c2,n1="A",n2="B",m="ret"):
+		if m=="ret":
+			return juntarListas(c1,c2)
+		elif m=="imp":
+			print n1,"u",n2,"=",str(juntarListas(c1,c2))
 
-def conPo2(con):
-	a=duplicarLista(con)
-	i=0
-	a=a+conPo1(a)
-	for wele in range(0,len(con)):
-		a.pop(0)
-	for el in range(1,len(con)):
-		a=a+conPo1(a[el])[1:]
-	return a
----No puedo resolver este problema,
-no soy de buscar ayuda en internet de hecho nunca lo he hecho
-pero si de aqui a una semana no lo resuelvo de una manera correcta
-usando la recursividad bien, buscare algun tutorial en algun foro o algo asi :v
-26/06/16---
-"""
+	def interseccion(self,c1,c2,n1="A",n2="B",m="ret"):
+		if m=="ret":
+			return elementosComunes(c1,c2)
+		elif m=="imp":
+			print n1,"n",n2,"=",str(elementosComunes(c1,c2))
+
+	def diferencia(self,c1,c2,n1="A",n2="B",m="ret"):
+		if m=="ret":
+			return quitar(c1,c2)
+		elif m=="imp":
+			print n1,"-",n2,"=",str(quitar(c1,c2))
+
+	def diferenciaSimetrica(self,c1,c2,n1="A",n2="B",m="ret"):
+		ds=self.diferencia(c1,c2)+self.diferencia(c2,c1)
+		if m=="ret":
+			return ds
+		elif m=="imp":
+			print "("+n1,"-",n2+")","u","("+n2,"-",n1+")","=",str(ds)
+
+op=Operaciones()
+d=[23,24,25,25,22,23]
+e=[23,24,24,26,28]
+print "D =",str(d)
+print "E =",str(e),"\n"
+op.union(d,e,"D","E","imp")
+op.interseccion(d,e,"D","E","imp")
+op.diferencia(d,e,"D","E","imp")
+op.diferencia(e,d,"E","D","imp")
+op.diferenciaSimetrica(d,e,"D","E","imp")
 
 #LuisAlbizo 24/06/16
