@@ -130,53 +130,28 @@ class main:
 						print "Opcion invalida"
 			elif opc=="1":
 				c=self.pedir2conjuntos()
-				nohuboerror=c["error"]
-				con1=c["con1"]
-				con2=c["con2"]
-				nom1=c["nom1"]
-				nom2=c["nom2"]
-				if nohuboerror:
-					pe.subConjunto(con1,con2,nom1,nom2,"imp")
+				if c["error"]:
+					pe.subConjunto(c["con1"],c["con2"],c["nom1"],c["nom2"],"imp")
 				pausa()
 			elif opc=="2":
 				c=self.pedir2conjuntos()
-				nohuboerror=c["error"]
-				con1=c["con1"]
-				con2=c["con2"]
-				nom1=c["nom1"]
-				nom2=c["nom2"]
-				if nohuboerror:
-					pe.superConjunto(con1,con2,nom1,nom2,"imp")
+				if c["error"]:
+					pe.superConjunto(c["con1"],c["con2"],c["nom1"],c["nom2"],"imp")
 				pausa()
 			elif opc=="3":
 				c=self.pedir2conjuntos()
-				nohuboerror=c["error"]
-				con1=c["con1"]
-				con2=c["con2"]
-				nom1=c["nom1"]
-				nom2=c["nom2"]
-				if nohuboerror:
-					pe.iguales(con1,con2,nom1,nom2,"imp")
+				if c["error"]:
+					pe.iguales(c["con1"],c["con2"],c["nom1"],c["nom2"],"imp")
 				pausa()
 			elif opc=="4":
 				c=self.pedir2conjuntos()
-				nohuboerror=c["error"]
-				con1=c["con1"]
-				con2=c["con2"]
-				nom1=c["nom1"]
-				nom2=c["nom2"]
-				if nohuboerror:
-					pe.subConjuntoPropio(con1,con2,nom1,nom2,"imp")
+				if c["error"]:
+					pe.subConjuntoPropio(c["con1"],c["con2"],c["nom1"],c["nom2"],"imp")
 				pausa()
 			elif opc=="5":
 				c=self.pedir2conjuntos()
-				nohuboerror=c["error"]
-				con1=c["con1"]
-				con2=c["con2"]
-				nom1=c["nom1"]
-				nom2=c["nom2"] 			
-				if nohuboerror:
-					pe.disjunto(con1,con2,nom1,nom2,"imp")
+				if c["error"]:
+					pe.disjunto(c["con1"],c["con2"],c["nom1"],c["nom2"],"imp")
 				pausa()
 			elif opc=="6":
 				c=self.pedir2conjuntos()
@@ -239,46 +214,26 @@ class main:
 			elif opc=="1":
 				print "Union"
 				c=self.pedir2conjuntos()
-				nohuboerror=c["error"]
-				con1=c["con1"]
-				con2=c["con2"]
-				nom1=c["nom1"]
-				nom2=c["nom2"]
-				if nohuboerror:
-					op.union(con1,con2,nom1,nom2,"imp")
+				if c["error"]:
+					op.union(c["con1"],c["con2"],c["nom1"],c["nom2"],"imp")
 				pausa()
 			elif opc=="2":
 				print "Interseccion"
 				c=self.pedir2conjuntos()
-				nohuboerror=c["error"]
-				con1=c["con1"]
-				con2=c["con2"]
-				nom1=c["nom1"]
-				nom2=c["nom2"]
-				if nohuboerror:
-					op.interseccion(con1,con2,nom1,nom2,"imp")
+				if c["error"]:
+					op.interseccion(c["con1"],c["con2"],c["nom1"],c["nom2"],"imp")
 				pausa()
 			elif opc=="3":
 				print "Diferencia"
 				c=self.pedir2conjuntos()
-				nohuboerror=c["error"]
-				con1=c["con1"]
-				con2=c["con2"]
-				nom1=c["nom1"]
-				nom2=c["nom2"]
-				if nohuboerror:
-					op.diferencia(con1,con2,nom1,nom2,"imp")
+				if c["error"]:
+					op.diferencia(c["con1"],c["con2"],c["nom1"],c["nom2"],"imp")
 				pausa()
 			elif opc=="4":
 				print "Diferencia simetrica"
 				c=self.pedir2conjuntos()
-				nohuboerror=c["error"]
-				con1=c["con1"]
-				con2=c["con2"]
-				nom1=c["nom1"]
-				nom2=c["nom2"]
-				if nohuboerror:
-					op.diferenciaSimetrica(con1,con2,nom1,nom2,"imp")
+				if c["error"]:
+					op.diferenciaSimetrica(c["con1"],c["con2"],c["nom1"],c["nom2"],"imp")
 				pausa()
 			else:
 				print "Opcion invalida"
