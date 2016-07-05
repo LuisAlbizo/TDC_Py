@@ -65,6 +65,7 @@ Subtema 1: Union (u)
 Subtema 2: Interseccion (n)
 Subtema 3: Diferencia (\)
 Subtema 4: Diferencia simetrica (/\)
+Subtema 5: Complemento (')
 Otros teoremas[o/O]
 _Union.-
 La operacion de union entre 2 conjuntos A y B es un conjunto resultante el cual contiene todod los elementos que pertenecen a A y todos los elementos que pertenecen a B
@@ -88,18 +89,31 @@ A={Rojo, Azul, Verde}
 B={Amarillo, Naranja, Verde}
 A \ B = {Rojo, Azul}
 B \ A = {Amarillo, Naranja}
-Entonce podemos decir que las sig. igualdades/equivalencias son correctas:
+Entonces podemos decir que las sig. igualdades/equivalencias son correctas:
 A \ B = A \ (A n B)
 _Diferecia simetrica.-
 La operacion de diferencia simetrica entre 2 conjuntos A y B es un conjunto resultante que contiene todos los elementos que pertenecen a A o pertenecen a B pero no a ambos, en otras palabras es la diferencia simetrica entre dos conjuntos son todos los elementos que pertenecen a ambos a excepcion de aquellos elementos que pertenecen a los dos al mismo tiempo
-El simbolo que mas se utiliza para denotar la diferencia simetrica de dos conjuntos es un triangulo [A triangulo B] (pero en este programa se utilizara '/\')
+El simbolo que mas se utiliza para denotar la diferencia simetrica de dos conjuntos es un triangulo [A triangulo B], tambien se usa un signo de suma (+) encerrado en un circulo y se le llama suma directa en lugar de diferencia simetrica (pero en este programa se utilizara '/\')
 Ejemplo.-
 A={Rojo, Azul, Verde}
 B={Amarillo, Naranja, Verde}
 A /\ B = {Rojo, Azul, Amarillo, Naranja}
-Entonce podemos decir que las sig. igualdades/equivalencias son correctas:
+Entonces podemos decir que las sig. igualdades/equivalencias son correctas:
 A /\ B = (A \ B) u (B \ A)
 A /\ B = (A u B) \ (A n B)
+Por lo tanto se podria decir que la operacion diferencia simetrica es contraria a la operacion interseccion.
+_Complemento.-
+La operacion de complemento entre 2 conjuntos A y B es un conjunto resultante que contiene todos los elementos que no pertenecen a A, mejor dicho la operacion complemento entre 2 conjuntos es igual a todos los elementos que pertenecen a el primer conjunto excepto los elementos que pertenecen a el segundo conjunto.
+Los simbolos que se utilizan para denotar la operacion complemento son una 'C' por arriba del conjunto, un '—' por arriba del conjunto o una ' a la derecha del conjunto (en este programa se utilizara: ')
+Ejemplo.-
+A={Rojo, Azul, Verde}
+B={Amarillo, Naranja, Verde}
+A' = {Rojo, Azul}
+B' = {Amarillo, Naranja}
+Entonces podemos decir que las sig. igualdades/equivalencias son correctas:
+A' = B \ A
+B' = A \ B
+Por lo tanto se podria decir que la operacion complemento es contraria a la operacion diferencia.
 _Teoremas.-
 Si tenemos 2 conjuntos A y B:
 Si B={}

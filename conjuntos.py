@@ -132,5 +132,13 @@ class Operaciones:
 			return ds
 		elif m=="imp":
 			print n1,"/\\",n2,"=",str(ds)
+		
+	def complemento(self,c1,c2,n1="A",n2="B",m="ret"):
+		if m=="ret":
+			return quitar(c2,c1)
+		elif m=="imp":
+			print "Si el conjunto universo es",n1,"u",n2,"osea",str(self.union(c1,c2)),"; entonces el complemento para",n1,"seria:\n"
+			print n1+"'","=",str(quitar(c2,c1))
+
 
 #LuisAlbizo 24/06/16

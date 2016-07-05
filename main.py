@@ -182,6 +182,7 @@ class main:
 			print "Opcion 2: Interseccion"
 			print "Opcion 3: Diferencia"
 			print "Opcion 4: Diferencia simetrica"
+			print "Opcion 5: Complemento"
 			print "Volver al menu principal[s/S]\n"
 			opc=raw_input("Escoge tu opcion: ")
 			limpiar()
@@ -189,23 +190,26 @@ class main:
 				break
 			elif opc=="0":
 				while True:
-					mostrarTexto(text,61,68)
+					mostrarTexto(text,61,69)
 					sub=raw_input("Regresar[s/S]\n\nEscoge un subtema: ")
 					limpiar()
 					if sub=="1" or sub == "u":
-						mostrarTexto(text,69,75)
+						mostrarTexto(text,70,76)
 						pausa()
 					elif sub=="2" or sub== "n":
-						mostrarTexto(text,76,82)
+						mostrarTexto(text,77,83)
 						pausa()
 					elif sub=="3" or sub == "\\":
-						mostrarTexto(text,83,92)
+						mostrarTexto(text,84,93)
 						pausa()
 					elif sub=="4" or sub == "/\\":
-						mostrarTexto(text,93,102)
+						mostrarTexto(text,94,104)
+						pausa()
+					elif sub =="5" or sub == "'":
+						mostrarTexto(text,105,116)
 						pausa()
 					elif sub == "o" or sub == "O":
-						mostrarTexto(text,103,113)
+						mostrarTexto(text,117,127)
 						pausa()
 					elif sub=="s" or sub=="S":	
 						break
@@ -235,6 +239,12 @@ class main:
 				if c["error"]:
 					op.diferenciaSimetrica(c["con1"],c["con2"],c["nom1"],c["nom2"],"imp")
 				pausa()
+			elif opc=="5":
+				print "Complemento"
+				c=self.pedir2conjuntos()
+				if c["error"]:
+					op.complemento(c["con1"],c["con2"],c["nom1"],c["nom2"],"imp")
+				pausa()
 			else:
 				print "Opcion invalida"
 	
@@ -245,6 +255,10 @@ class main:
 		pausa()
 
 if error:
-	menu=main(conjunto)
+	try:
+		menu=main(conjunto)
+	except:
+		pausa("Ocurrio un error desconocido\n")
+		exit()
 
 #Luis Albizo 27/06/16
